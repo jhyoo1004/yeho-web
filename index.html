@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주식회사 예호</title>
+<meta name="description" content="주식회사 예호 — 예리함으로 판단하고, 깊이로 지킵니다.">
+<meta property="og:title" content="주식회사 예호">
+<meta property="og:description" content="예리함으로 판단하고, 깊이로 지킵니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+<style>
+  :root {
+    --bg: #0A1628;
+    --fg: #F3F5F8;
+    --accent: #C9D2DE;
+    --muted: #6E7E96;
+    --dim: #5C6B82;
+    --dimmer: #3E4C63;
+    --line: #1B2740;
+    --rule: #33455E;
+    --serif: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+    --sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: #E8ECF2; }
+
+  /* ── Header ───────────────────────────────── */
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(20px, 3vw, 32px) clamp(24px, 5vw, 64px);
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand svg { width: clamp(22px, 2.2vw, 28px); height: auto; display: block; }
+
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(16px, 1.6vw, 20px);
+    letter-spacing: 0.02em;
+    color: #EDEFF3;
+  }
+
+  .header-label {
+    font-size: clamp(9px, 0.9vw, 11px);
+    letter-spacing: 0.22em;
+    color: var(--dim);
+  }
+
+  /* ── Hero ─────────────────────────────────── */
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: clamp(48px, 8vh, 96px) clamp(28px, 8vw, 120px);
+    position: relative;
+  }
+
+  .watermark {
+    position: absolute;
+    right: -0.08em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(150px, 25vw, 360px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    opacity: 0.07;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(46px, 7vw, 88px);
+    line-height: 1.1;
+    color: var(--fg);
+    margin: 0;
+  }
+
+  .rule {
+    width: clamp(32px, 3vw, 40px);
+    height: 1px;
+    background: var(--rule);
+    margin: clamp(20px, 2.5vw, 28px) 0 clamp(18px, 2.2vw, 24px);
+  }
+
+  .tagline {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(15px, 1.6vw, 19px);
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    color: #DDE3EB;
+    margin: 0;
+  }
+
+  .story {
+    margin: clamp(14px, 1.6vw, 18px) 0 0;
+    font-size: clamp(12px, 1.1vw, 13px);
+    font-weight: 300;
+    line-height: 2.1;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+
+  /* ── Footer ───────────────────────────────── */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: clamp(20px, 2.5vw, 28px) clamp(24px, 5vw, 64px) clamp(24px, 2.5vw, 28px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: clamp(11px, 1vw, 12px);
+    color: var(--dim);
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-info {
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  .copyright { color: var(--dim); }
+
+  @media (max-width: 720px) {
+    .site-footer {
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+    .footer-info { text-align: left; }
+    .copyright { color: var(--dimmer); }
+    .watermark { right: -0.1em; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M8 44 Q 20 52 32 44 T 56 44" stroke="#C9D2DE" stroke-width="2" stroke-linecap="round"/>
+        <line x1="14" y1="12" x2="50" y2="52" stroke="#C9D2DE" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">예호</span>
+    </div>
+    <div class="header-label">CORPORATE</div>
+  </header>
+
+  <main class="hero">
+    <div class="watermark" aria-hidden="true">銳澔</div>
+    <div class="hero-inner">
+      <h1 class="wordmark">예호</h1>
+      <div class="rule"></div>
+      <p class="tagline">예리함으로 판단하고, 깊이로 지킵니다.</p>
+      <p class="story">판단은 한 점을 향하지만,<br>그 판단이 서 있는 자리는 깊고 넓습니다.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="copyright">© 2026 주식회사 예호. All rights reserved.</div>
+    <div class="footer-info">
+      주식회사 예호&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호 [000-00-00000]<br>
+      주소 인천광역시 연수구 송도동
+    </div>
+  </footer>
+
+</body>
+</html>
